@@ -23,13 +23,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-    {path: 'home', component: HomeComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'contact', component: ContactComponent}
-  ]),],
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
