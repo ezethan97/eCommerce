@@ -29,17 +29,6 @@
     <div class="container signin">
       <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
     </div>
-
-    <script>
-      function check() {
-        var input = document.getElementById('psw');
-        if (input.value != document.getElementById('psw-repeat').value) {
-            input.setCustomValidity('Password Must be Matching.');
-        } else {
-            // input is valid -- reset the error message
-            input.setCustomValidity('');
-        }
-      }
-    </script>
-    
   </form>
+
+  <script src="../../assets/check.js"></script>
