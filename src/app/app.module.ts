@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     RegisterComponent,
     AboutComponent,
     ContactComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
