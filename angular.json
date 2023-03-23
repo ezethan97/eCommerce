@@ -28,7 +28,12 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": ["src/assets/check.js"]
+            "scripts": [
+              "src/assets/check.js", 
+              "src/assets/store.js",
+              "src/assets/retrieve.js",
+              "src/assets/clear.js"
+            ]
           },
           "configurations": {
             "production": {
