@@ -1,6 +1,5 @@
 function create(name, price, description, image)
 {
-    document.getElementById("cards").innerHTML = "";
     document.getElementById("cards").innerHTML += 
     `<div class="card">
     <img src="https://full-stack-images.s3.us-east-2.amazonaws.com/${image}" width="200px" height="200px" class="card-img-top" alt="...">

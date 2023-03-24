@@ -17,20 +17,24 @@ export class HomeComponent {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+
     this.getRowData(1);
-    console.log(this.rowData);
-    console.log(this.name,this.price,this.description,this.image)
-    create(this.name,this.price,this.description,this.image)
+    
   }
 
   getRowData(id: number) {
-    const url = `http://localhost:9080/api/listings/${id}`;
+    const url = `http://localhost:9080/api/listings`;
     this.http.get(url).subscribe(data => {
       this.rowData = data; // Store the response data in the rowData variable
-      this.name = (data as { name: string }).name;
-      this.price = (data as { price: number }).price;
-      this.description = (data as { description: string }).description;
-      this.image = (data as { image: string }).image;
+      var temp = Array.from(this.rowData);
+      for(var i = 0; i < temp.length; i++){
+        this.name = (temp[i] as { name: string }).name;
+        this.price = (temp[i] as { price: number }).price;
+        this.description = (temp[i] as { description: string }).description;
+        this.image = (temp[i] as { image: string }).image;
+        console.log(this.image);
+        create(this.name,this.price,this.description,this.image)
+      }
     });
-  }
+  }  
 }
