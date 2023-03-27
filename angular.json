@@ -32,7 +32,6 @@
               "src/assets/check.js", 
               "src/assets/store.js",
               "src/assets/retrieve.js",
-              "src/assets/clear.js",
               "src/assets/create.js"
             ]
           },

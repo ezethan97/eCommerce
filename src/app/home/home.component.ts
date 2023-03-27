@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-declare function create(name:string, price:number, description:string, image:string): void;
+declare function create(id:number, name:string, price:number, description:string, image:string): void;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,6 +9,7 @@ declare function create(name:string, price:number, description:string, image:str
 })
 export class HomeComponent {
   rowData: any; // Declare rowData to store the response data
+  productID!: number;
   name!: string;
   price!: number;
   description!: string;
@@ -28,12 +29,13 @@ export class HomeComponent {
       this.rowData = data; // Store the response data in the rowData variable
       var temp = Array.from(this.rowData);
       for(var i = 0; i < temp.length; i++){
+        this.productID = (temp[i] as { productID: number}).productID;
         this.name = (temp[i] as { name: string }).name;
         this.price = (temp[i] as { price: number }).price;
         this.description = (temp[i] as { description: string }).description;
         this.image = (temp[i] as { image: string }).image;
-        console.log(this.image);
-        create(this.name,this.price,this.description,this.image)
+        //console.log(this.productID);
+        create(this.productID, this.name,this.price,this.description,this.image)
       }
     });
   }  

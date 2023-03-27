@@ -10,9 +10,13 @@ function retrieve()
         const myArray = item.split(',');
         var name = myArray[0];
         var price = myArray[1];
-        document.getElementById("products").innerHTML += "<p>" + name + "</p>";
-        document.getElementById("products").innerHTML += "<p>" + price + "</p>";        
+        name = name.split(':')[1];
         price = price.replace(/[^0-9.]/g, '');
+        document.getElementById("products").innerHTML += 
+        `<div class="product">
+        <p>${name}</p>
+        <p>$${price}</p>
+        </div>`;        
         total += parseFloat(price);
     }
     document.getElementById("total").innerText = "$"+total;
