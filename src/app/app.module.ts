@@ -10,7 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UploadComponent } from './upload/upload.component';
-import { HttpClient, HttpClientModule} from '@angular/common/http'
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { LogoutComponent } from './logout/logout.component';
+import { FormsModule } from '@angular/forms';
+import { HttpInterceptorService } from './http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,22 @@ import { HttpClient, HttpClientModule} from '@angular/common/http'
     AboutComponent,
     ContactComponent,
     CheckoutComponent,
-    UploadComponent
+    UploadComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

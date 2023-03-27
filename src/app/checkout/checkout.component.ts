@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 declare function retrieve(): void
-declare function clear(): void
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',

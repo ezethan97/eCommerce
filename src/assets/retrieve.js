@@ -19,5 +19,9 @@ function retrieve()
         </div>`;        
         total += parseFloat(price);
     }
-    document.getElementById("total").innerText = "$"+total;
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
+    document.getElementById("total").innerText = formatter.format(total);
 }
